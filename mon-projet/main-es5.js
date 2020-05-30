@@ -448,7 +448,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-annonces"]],
       decls: 3,
       vars: 2,
-      consts: [[1, "publicationDiv"], [4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [3, "publication", 4, "ngFor", "ngForOf"], [3, "publication"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../../../assets/images/loding.gif"]],
+      consts: [[1, "publicationDiv"], [4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [3, "publication", 4, "ngFor", "ngForOf"], [3, "publication"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../assets/images/loding.gif"]],
       template: function AnnoncesComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -765,7 +765,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-contrats"]],
       decls: 3,
       vars: 2,
-      consts: [[1, "publicationDiv"], [4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [3, "contrat", 4, "ngFor", "ngForOf"], [3, "contrat"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../../../assets/images/loding.gif"]],
+      consts: [[1, "publicationDiv"], [4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [3, "contrat", 4, "ngFor", "ngForOf"], [3, "contrat"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../assets/images/loding.gif"]],
       template: function ContratsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -870,7 +870,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               orientation: 'portrait'
             }
           };
-          var content = "<div style=\"padding:100px;border:solid deepPink 10px;height:100vh\"><img src='/../../../assets/images/logo.jpg'><br><h1 style=\"position:relative;left:30%;\"> CONTRAT DE LOCATION </h1> <strong>Nom du voisin 1 :</strong>".concat(this.contrat.nom_1, "<br><strong>Nom du voisin 2 </strong>:").concat(this.contrat.nom_1, "<br><p>ont etabli un contrat de location numero 120254 sur le site DIY-BRICO</p><br><strong>Pour un Prix de ").concat(this.contrat.montant, " \u20AC </strong> </div>");
+          var content = "<div style=\"padding:100px;border:solid deepPink 10px;height:100vh\"><img src='/../assets/images/logo.jpg'><br><h1 style=\"position:relative;left:30%;\"> CONTRAT DE LOCATION </h1> <strong>Nom du voisin 1 :</strong>".concat(this.contrat.nom_1, "<br><strong>Nom du voisin 2 </strong>:").concat(this.contrat.nom_1, "<br><p>ont etabli un contrat de location numero 120254 sur le site DIY-BRICO</p><br><strong>Pour un Prix de ").concat(this.contrat.montant, " \u20AC </strong> </div>");
           html2pdf_js__WEBPACK_IMPORTED_MODULE_1__().from(content).set(option).save();
           this.print = false;
           console.log(content);
@@ -892,7 +892,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       decls: 13,
       vars: 3,
-      consts: [[1, "shadow", "p-3", "mb-5", "bg-white", "rounded", "smallContrat"], ["src", "/../../../assets/images/logo.jpg"], [1, "btn", "btn-success", 2, "position", "relative", "left", "75%", 3, "click"]],
+      consts: [[1, "shadow", "p-3", "mb-5", "bg-white", "rounded", "smallContrat"], ["src", "/../assets/images/logo.jpg"], [1, "btn", "btn-success", 2, "position", "relative", "left", "75%", 3, "click"]],
       template: function UnContratComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1337,7 +1337,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       decls: 3,
       vars: 2,
-      consts: [[1, "shadow", "p-3", "mb-5", "bg-white", "rounded"], [4, "ngIf"], ["width", "3em", "height", "3em", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg", 1, "bi", "bi-envelope-open"], ["fill-rule", "evenodd", "d", "M.243 6.929l.514-.858L8 10.417l7.243-4.346.514.858L8 11.583.243 6.93z", "clip-rule", "evenodd"], ["fill-rule", "evenodd", "d", "M7.184 10.68L.752 14.432l-.504-.864L6.68 9.816l.504.864zm1.632 0l6.432 3.752.504-.864L9.32 9.816l-.504.864z", "clip-rule", "evenodd"], ["fill-rule", "evenodd", "d", "M8.47 1.318a1 1 0 00-.94 0l-6 3.2A1 1 0 001 5.4V14a1 1 0 001 1h12a1 1 0 001-1V5.4a1 1 0 00-.53-.882l-6-3.2zM7.06.435a2 2 0 011.882 0l6 3.2A2 2 0 0116 5.4V14a2 2 0 01-2 2H2a2 2 0 01-2-2V5.4a2 2 0 011.059-1.765l6-3.2z", "clip-rule", "evenodd"], ["style", "position:relative;left:70%;", 4, "ngIf"], ["style", "width: 90%; margin: 10px;", 4, "ngIf"], [2, "position", "relative", "left", "70%"], [1, "btn", "btn-success", 2, "margin", "5px", 3, "click"], ["width", "1.5em", "height", "1.5em", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg", 1, "bi", "bi-reply-all"], ["fill-rule", "evenodd", "d", "M8.002 5.013a.144.144 0 00-.202.134V6.3a.5.5 0 01-.5.5c-.667 0-2.013.005-3.3.822-.984.624-1.99 1.76-2.595 3.876C2.425 10.515 3.59 9.982 4.61 9.7a8.741 8.741 0 011.921-.306 7.403 7.403 0 01.798.008h.013l.005.001h.001L7.3 9.9l.05-.498a.5.5 0 01.45.498v1.153c0 .108.11.176.202.134l3.984-2.933a.494.494 0 01.042-.028.147.147 0 000-.252.494.494 0 01-.042-.028L8.002 5.013zM6.8 10.386a7.745 7.745 0 00-1.923.277c-1.326.368-2.896 1.201-3.94 3.08a.5.5 0 01-.933-.305c.464-3.71 1.886-5.662 3.46-6.66 1.245-.79 2.527-.942 3.336-.971v-.66a1.144 1.144 0 011.767-.96l3.994 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a1.144 1.144 0 01-1.767-.96v-.667z", "clip-rule", "evenodd"], ["fill-rule", "evenodd", "d", "M10.868 4.293a.5.5 0 01.7-.106l3.993 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a.5.5 0 01-.593-.805l4.012-2.954a.493.493 0 01.042-.028.147.147 0 000-.252.496.496 0 01-.042-.028l-4.012-2.954a.5.5 0 01-.106-.699z", "clip-rule", "evenodd"], [1, "btn", "btn-warning", 2, "margin", "5px", 3, "click"], ["width", "1.5em", "height", "1.5em", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg", 1, "bi", "bi-trash"], ["d", "M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"], ["fill-rule", "evenodd", "d", "M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z", "clip-rule", "evenodd"], [2, "width", "90%", "margin", "10px"], [3, "ngSubmit"], ["f", "ngForm"], ["typr", "textarea", "rows", "3", "ngModel", "", "name", "contenu", 1, "form-control"], ["style", "position:relative;left:75%;", 4, "ngIf"], [2, "position", "relative", "left", "75%"], ["type", "submit", 1, "btn", "btn-success", 2, "margin", "5px"], ["src", "/../../../assets/images/warning.png"], [1, "btn", "btn-danger", 2, "margin", "5px", 3, "click"]],
+      consts: [[1, "shadow", "p-3", "mb-5", "bg-white", "rounded"], [4, "ngIf"], ["width", "3em", "height", "3em", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg", 1, "bi", "bi-envelope-open"], ["fill-rule", "evenodd", "d", "M.243 6.929l.514-.858L8 10.417l7.243-4.346.514.858L8 11.583.243 6.93z", "clip-rule", "evenodd"], ["fill-rule", "evenodd", "d", "M7.184 10.68L.752 14.432l-.504-.864L6.68 9.816l.504.864zm1.632 0l6.432 3.752.504-.864L9.32 9.816l-.504.864z", "clip-rule", "evenodd"], ["fill-rule", "evenodd", "d", "M8.47 1.318a1 1 0 00-.94 0l-6 3.2A1 1 0 001 5.4V14a1 1 0 001 1h12a1 1 0 001-1V5.4a1 1 0 00-.53-.882l-6-3.2zM7.06.435a2 2 0 011.882 0l6 3.2A2 2 0 0116 5.4V14a2 2 0 01-2 2H2a2 2 0 01-2-2V5.4a2 2 0 011.059-1.765l6-3.2z", "clip-rule", "evenodd"], ["style", "position:relative;left:70%;", 4, "ngIf"], ["style", "width: 90%; margin: 10px;", 4, "ngIf"], [2, "position", "relative", "left", "70%"], [1, "btn", "btn-success", 2, "margin", "5px", 3, "click"], ["width", "1.5em", "height", "1.5em", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg", 1, "bi", "bi-reply-all"], ["fill-rule", "evenodd", "d", "M8.002 5.013a.144.144 0 00-.202.134V6.3a.5.5 0 01-.5.5c-.667 0-2.013.005-3.3.822-.984.624-1.99 1.76-2.595 3.876C2.425 10.515 3.59 9.982 4.61 9.7a8.741 8.741 0 011.921-.306 7.403 7.403 0 01.798.008h.013l.005.001h.001L7.3 9.9l.05-.498a.5.5 0 01.45.498v1.153c0 .108.11.176.202.134l3.984-2.933a.494.494 0 01.042-.028.147.147 0 000-.252.494.494 0 01-.042-.028L8.002 5.013zM6.8 10.386a7.745 7.745 0 00-1.923.277c-1.326.368-2.896 1.201-3.94 3.08a.5.5 0 01-.933-.305c.464-3.71 1.886-5.662 3.46-6.66 1.245-.79 2.527-.942 3.336-.971v-.66a1.144 1.144 0 011.767-.96l3.994 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a1.144 1.144 0 01-1.767-.96v-.667z", "clip-rule", "evenodd"], ["fill-rule", "evenodd", "d", "M10.868 4.293a.5.5 0 01.7-.106l3.993 2.94a1.147 1.147 0 010 1.946l-3.994 2.94a.5.5 0 01-.593-.805l4.012-2.954a.493.493 0 01.042-.028.147.147 0 000-.252.496.496 0 01-.042-.028l-4.012-2.954a.5.5 0 01-.106-.699z", "clip-rule", "evenodd"], [1, "btn", "btn-warning", 2, "margin", "5px", 3, "click"], ["width", "1.5em", "height", "1.5em", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg", 1, "bi", "bi-trash"], ["d", "M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"], ["fill-rule", "evenodd", "d", "M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z", "clip-rule", "evenodd"], [2, "width", "90%", "margin", "10px"], [3, "ngSubmit"], ["f", "ngForm"], ["typr", "textarea", "rows", "3", "ngModel", "", "name", "contenu", 1, "form-control"], ["style", "position:relative;left:75%;", 4, "ngIf"], [2, "position", "relative", "left", "75%"], ["type", "submit", 1, "btn", "btn-success", 2, "margin", "5px"], ["src", "/../assets/images/warning.png"], [1, "btn", "btn-danger", 2, "margin", "5px", 3, "click"]],
       template: function MessageComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1601,7 +1601,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-messages"]],
       decls: 7,
       vars: 6,
-      consts: [[1, "publicationDiv"], ["class", "btn btn-success", 3, "click", 4, "ngIf"], [4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [1, "btn", "btn-success", 3, "click"], [3, "message", 4, "ngFor", "ngForOf"], [3, "message"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../../../assets/images/loding.gif"]],
+      consts: [[1, "publicationDiv"], ["class", "btn btn-success", 3, "click", 4, "ngIf"], [4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [1, "btn", "btn-success", 3, "click"], [3, "message", 4, "ngFor", "ngForOf"], [3, "message"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../assets/images/loding.gif"]],
       template: function MessagesComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1811,7 +1811,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-navigation-connexion"]],
       decls: 23,
       vars: 4,
-      consts: [[2, "position", "fixed", "top", "0px", "width", "100%", "background-color", "white"], ["id", "navigation", 1, "navbar", "navbar-light", "navbar-expand-lg", 2, "background-color", "white", "width", "100%"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarTogglerDemo01", "aria-controls", "navbarTogglerDemo01", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarTogglerDemo01", 1, "collapse", "navbar-collapse"], ["src", "/../../assets/images/logo.jpg", 2, "margin-right", "20px"], ["routerLink", "../", 1, "navbar-brand"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], [1, "nav-item"], ["href", "#", 1, "nav-link"], [1, "sr-only"], ["routerLink", "../tout-les-publications", "routerLinkActive", "Active", 1, "nav-link"], ["class", "alert alert-success", "role", "alert", 4, "ngIf"], ["src", "/../../assets/images/loding.gif", "style", "margin: 50px; margin-top: 0px;margin-bottom: 0px;", 4, "ngIf"], ["src", "/../../assets/images/success.png", "style", "margin: 50px; margin-top: 0px;margin-bottom: 0px;", 4, "ngIf"], ["class", "form-inline my-1 my-lg-0", 4, "ngIf"], ["role", "alert", 1, "alert", "alert-success"], ["src", "/../../assets/images/loding.gif", 2, "margin", "50px", "margin-top", "0px", "margin-bottom", "0px"], ["src", "/../../assets/images/success.png", 2, "margin", "50px", "margin-top", "0px", "margin-bottom", "0px"], [1, "form-inline", "my-1", "my-lg-0"], [1, "btn", "btn-outline-success", "my-0.5", "my-sm-0", 3, "click"]],
+      consts: [[2, "position", "fixed", "top", "0px", "width", "100%", "background-color", "white"], ["id", "navigation", 1, "navbar", "navbar-light", "navbar-expand-lg", 2, "background-color", "white", "width", "100%"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarTogglerDemo01", "aria-controls", "navbarTogglerDemo01", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarTogglerDemo01", 1, "collapse", "navbar-collapse"], ["src", "/assets/images/logo.jpg", 2, "margin-right", "20px"], ["routerLink", "../", 1, "navbar-brand"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], [1, "nav-item"], ["href", "#", 1, "nav-link"], [1, "sr-only"], ["routerLink", "../tout-les-publications", "routerLinkActive", "Active", 1, "nav-link"], ["class", "alert alert-success", "role", "alert", 4, "ngIf"], ["src", "/assets/images/loding.gif", "style", "margin: 50px; margin-top: 0px;margin-bottom: 0px;", 4, "ngIf"], ["src", "/assets/images/success.png", "style", "margin: 50px; margin-top: 0px;margin-bottom: 0px;", 4, "ngIf"], ["class", "form-inline my-1 my-lg-0", 4, "ngIf"], ["role", "alert", 1, "alert", "alert-success"], ["src", "/assets/images/loding.gif", 2, "margin", "50px", "margin-top", "0px", "margin-bottom", "0px"], ["src", "/assets/images/success.png", 2, "margin", "50px", "margin-top", "0px", "margin-bottom", "0px"], [1, "form-inline", "my-1", "my-lg-0"], [1, "btn", "btn-outline-success", "my-0.5", "my-sm-0", 3, "click"]],
       template: function NavigationConnexionComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -2442,7 +2442,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-profile"]],
       decls: 2,
       vars: 2,
-      consts: [["class", "publicationDiv", 4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [1, "publicationDiv"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../../../assets/images/loding.gif"]],
+      consts: [["class", "publicationDiv", 4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [1, "publicationDiv"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../assets/images/loding.gif"]],
       template: function ProfileComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ProfileComponent_div_0_Template, 7, 3, "div", 0);
@@ -2895,7 +2895,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-rendez-vous"]],
       decls: 2,
       vars: 2,
-      consts: [["class", "publicationDiv", 4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [1, "publicationDiv"], [3, "rendez_vous", 4, "ngFor", "ngForOf"], [3, "rendez_vous"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../../../assets/images/loding.gif"]],
+      consts: [["class", "publicationDiv", 4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [1, "publicationDiv"], [3, "rendez_vous", 4, "ngFor", "ngForOf"], [3, "rendez_vous"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../assets/images/loding.gif"]],
       template: function RendezVousComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, RendezVousComponent_div_0_Template, 2, 1, "div", 0);
@@ -3131,7 +3131,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.connexion = connexion;
         this.myIcon = leaflet__WEBPACK_IMPORTED_MODULE_1__["icon"]({
-          iconUrl: '/../../assets/images/mark.png'
+          iconUrl: '/assets/images/mark.png'
         });
         this.att = 50.6311634;
         this.lat = 3.0599573;
@@ -3552,7 +3552,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-voisins"]],
       decls: 4,
       vars: 3,
-      consts: [[2, "position", "relative", "left", "50%"], [3, "rayon", 4, "ngIf"], ["class", "publicationDiv", 4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [3, "rayon"], [1, "publicationDiv"], [3, "voisin", 4, "ngFor", "ngForOf"], [3, "voisin"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../../../assets/images/loding.gif"]],
+      consts: [[2, "position", "relative", "left", "50%"], [3, "rayon", 4, "ngIf"], ["class", "publicationDiv", 4, "ngIf"], ["style", "position: absolute;top: 200px;left:50%;", 4, "ngIf"], [3, "rayon"], [1, "publicationDiv"], [3, "voisin", 4, "ngFor", "ngForOf"], [3, "voisin"], [2, "position", "absolute", "top", "200px", "left", "50%"], ["src", "/../assets/images/loding.gif"]],
       template: function VoisinsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 0);
@@ -4555,7 +4555,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       decls: 19,
       vars: 1,
-      consts: [["id", "navigation", 1, "navbar", "navbar-light", "navbar-expand-lg"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarTogglerDemo01", "aria-controls", "navbarTogglerDemo01", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarTogglerDemo01", 1, "collapse", "navbar-collapse"], ["src", "/../../assets/images/logo.jpg", 2, "margin-right", "20px"], ["routerLink", "", 1, "navbar-brand"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], [1, "nav-item"], ["href", "#", 1, "nav-link"], [1, "sr-only"], ["routerLink", "/tout-les-publications", 1, "nav-link"], ["class", "form-inline my-1 my-lg-0", 4, "ngIf"], [1, "form-inline", "my-1", "my-lg-0"], [1, "btn", "btn-outline-primary", "my-0.5", "mx-2", 3, "click"], [1, "btn", "btn-outline-success", "my-0.5", "my-sm-0", 3, "click"]],
+      consts: [["id", "navigation", 1, "navbar", "navbar-light", "navbar-expand-lg"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarTogglerDemo01", "aria-controls", "navbarTogglerDemo01", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarTogglerDemo01", 1, "collapse", "navbar-collapse"], ["src", "/assets/images/logo.jpg", 2, "margin-right", "20px"], ["routerLink", "", 1, "navbar-brand"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], [1, "nav-item"], ["href", "#", 1, "nav-link"], [1, "sr-only"], ["routerLink", "/tout-les-publications", 1, "nav-link"], ["class", "form-inline my-1 my-lg-0", 4, "ngIf"], [1, "form-inline", "my-1", "my-lg-0"], [1, "btn", "btn-outline-primary", "my-0.5", "mx-2", 3, "click"], [1, "btn", "btn-outline-success", "my-0.5", "my-sm-0", 3, "click"]],
       template: function NavigationComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
@@ -5359,7 +5359,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       decls: 32,
       vars: 2,
-      consts: [[2, "width", "100%", "height", "100vh", "background-color", "rgba(0,0,0,0.9)", "position", "absolute"], [1, "modal-dialog"], [1, "modal-content"], [1, "modal-body"], ["type", "button", "aria-label", "Close", 1, "close", 3, "click"], ["aria-hidden", "true"], [2, "margin", "50px"], [3, "ngSubmit"], ["f", "ngForm"], [1, "form-group"], ["for", "Email8"], ["type", "email", "id", "Emai18", "name", "email", "ngModel", "", "aria-describedby", "emailHelp", "required", "", "email", "", 1, "form-control"], ["id", "emailHelp", 1, "form-text", "text-muted"], ["for", "Password8"], ["type", "password", "id", "Password8", "name", "motdepasse", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group", "form-check"], ["type", "checkbox", "name", "save", "id", "exampleCheck1", 1, "form-check-input"], ["for", "exampleCheck1", 1, "form-check-label"], ["type", "submit", 1, "btn", "btn-success", 2, "position", "relative", "left", "20%", "width", "60%", 3, "disabled"], ["src", "/../../assets/images/loding.gif", "style", "position: relative;left: 45%;bottom: 50px;", 4, "ngIf"], ["src", "/../../assets/images/loding.gif", 2, "position", "relative", "left", "45%", "bottom", "50px"]],
+      consts: [[2, "width", "100%", "height", "100vh", "background-color", "rgba(0,0,0,0.9)", "position", "absolute"], [1, "modal-dialog"], [1, "modal-content"], [1, "modal-body"], ["type", "button", "aria-label", "Close", 1, "close", 3, "click"], ["aria-hidden", "true"], [2, "margin", "50px"], [3, "ngSubmit"], ["f", "ngForm"], [1, "form-group"], ["for", "Email8"], ["type", "email", "id", "Emai18", "name", "email", "ngModel", "", "aria-describedby", "emailHelp", "required", "", "email", "", 1, "form-control"], ["id", "emailHelp", 1, "form-text", "text-muted"], ["for", "Password8"], ["type", "password", "id", "Password8", "name", "motdepasse", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group", "form-check"], ["type", "checkbox", "name", "save", "id", "exampleCheck1", 1, "form-check-input"], ["for", "exampleCheck1", 1, "form-check-label"], ["type", "submit", 1, "btn", "btn-success", 2, "position", "relative", "left", "20%", "width", "60%", 3, "disabled"], ["src", "/assets/images/loding.gif", "style", "position: relative;left: 45%;bottom: 50px;", 4, "ngIf"], ["src", "/assets/images/loding.gif", 2, "position", "relative", "left", "45%", "bottom", "50px"]],
       template: function SeConnecterComponent_Template(rf, ctx) {
         if (rf & 1) {
           var _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -6094,7 +6094,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.connexion = connexion;
         this.myIcon = leaflet__WEBPACK_IMPORTED_MODULE_1__["icon"]({
-          iconUrl: '/../../assets/images/pnj.png'
+          iconUrl: '/assets/images/pnj.png'
         });
         this.att = this.connexion.att;
         this.lat = this.connexion["long"];
@@ -6220,7 +6220,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-navigation-tout-pub"]],
       decls: 18,
       vars: 0,
-      consts: [["id", "navigation", 1, "navbar", "navbar-light", "navbar-expand-lg"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarTogglerDemo01", "aria-controls", "navbarTogglerDemo01", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarTogglerDemo01", 1, "collapse", "navbar-collapse"], ["src", "/../../assets/images/logo.jpg", 2, "margin-right", "20px"], ["routerLink", "", 1, "navbar-brand"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], [1, "nav-item"], ["href", "#", 1, "nav-link"], [1, "sr-only"], ["routerLink", "/tout-les-publications", 1, "nav-link"]],
+      consts: [["id", "navigation", 1, "navbar", "navbar-light", "navbar-expand-lg"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarTogglerDemo01", "aria-controls", "navbarTogglerDemo01", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarTogglerDemo01", 1, "collapse", "navbar-collapse"], ["src", "/assets/images/logo.jpg", 2, "margin-right", "20px"], ["routerLink", "", 1, "navbar-brand"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], [1, "nav-item"], ["href", "#", 1, "nav-link"], [1, "sr-only"], ["routerLink", "/tout-les-publications", 1, "nav-link"]],
       template: function NavigationToutPubComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
