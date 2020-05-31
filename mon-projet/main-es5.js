@@ -3957,13 +3957,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var src_app_services_service_connexion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! src/app/services/service.connexion */
+    "./src/app/services/service.connexion.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 
     var InscriptionFormComponent = /*#__PURE__*/function () {
-      function InscriptionFormComponent() {
+      function InscriptionFormComponent(connexion) {
         _classCallCheck(this, InscriptionFormComponent);
+
+        this.connexion = connexion;
       }
 
       _createClass(InscriptionFormComponent, [{
@@ -3972,7 +3980,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmitInscription",
         value: function onSubmitInscription(form) {
-          console.log(form.value);
+          var inscription = {
+            nom: 'COMPTE INCOMLET',
+            prenom: 'COMPTE INCOMLET',
+            email: form.value['email'],
+            codepostale: form.value['codepostale'],
+            rue: form.value['rue'],
+            password: form.value['password'],
+            tel: '0777777777',
+            ville: form.value['ville']
+          };
+          this.connexion.creerCompte(inscription);
         }
       }]);
 
@@ -3980,15 +3998,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     InscriptionFormComponent.ɵfac = function InscriptionFormComponent_Factory(t) {
-      return new (t || InscriptionFormComponent)();
+      return new (t || InscriptionFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_service_connexion__WEBPACK_IMPORTED_MODULE_1__["connexionService"]));
     };
 
     InscriptionFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: InscriptionFormComponent,
       selectors: [["app-inscription-form"]],
-      decls: 27,
+      decls: 36,
       vars: 1,
-      consts: [[1, "inscription"], [1, "inscriptionDiv1"], [2, "font-size", "20px"], [3, "ngSubmit"], ["f", "ngForm"], [1, "form-row"], [1, "form-group", "col-md-6"], ["for", "inputEmail4"], ["type", "email", "id", "inputEmail4", "name", "emailInscription", "ngModel", "", "required", "", 1, "form-control"], ["for", "motdepasse0"], ["type", "password", "name", "motdepasseinscription", "id", "motdepasse0", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group", 2, "width", "80%"], ["for", "inputAddress2"], ["type", "text", "name", "emailInscription1", "id", "inputAddress2", "placeholder", "Apartment, studio, or floor", 1, "form-control"], [1, "form-group"], [1, "form-check"], ["type", "checkbox", "id", "gridCheck", "name", "accepter", "ngModel", "", "required", "", "checked", "", 1, "form-check-input"], ["for", "gridCheck", 1, "form-check-label"], [1, "inscriptionDivbutton"], ["type", "submit", 1, "btn", "btn-success", 2, "position", "relative", "left", "10%", "width", "80%", 3, "disabled"]],
+      consts: [[1, "inscription"], [1, "inscriptionDiv1"], [2, "font-size", "20px"], [3, "ngSubmit"], ["f", "ngForm"], [1, "form-row"], [1, "form-group", "col-md-6"], ["for", "inputEmail4"], ["type", "email", "id", "inputEmail4", "name", "email", "ngModel", "", "required", "", 1, "form-control"], ["for", "motdepasse0"], ["type", "password", "name", "password", "id", "motdepasse0", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group", "col-md-5"], ["for", "inputAddress2"], ["type", "text", "name", "rue", "id", "inputAddress2", "placeholder", "41 rue jean jaures", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group", "col-md-4"], ["for", "inpu2"], ["type", "text", "name", "codepostale", "id", "input2", "placeholder", "code postale", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group", "col-md-3"], ["for", "input3"], ["type", "text", "name", "ville", "id", "input3", "placeholder", "Ville", "ngModel", "", "required", "", 1, "form-control"], [1, "form-group"], [1, "form-check"], ["type", "checkbox", "id", "gridCheck", "name", "accepter", "ngModel", "", "required", "", "checked", "", 1, "form-check-input"], ["for", "gridCheck", 1, "form-check-label"], [1, "inscriptionDivbutton"], ["type", "submit", 1, "btn", "btn-success", 2, "position", "relative", "left", "10%", "width", "80%", 3, "disabled"]],
       template: function InscriptionFormComponent_Template(rf, ctx) {
         if (rf & 1) {
           var _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -4041,27 +4059,55 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "label", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Address");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "label", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "input", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "adresse ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "input", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "input", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "label", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "label", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, " j'accepte les conditions d'utilisation ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "code postale");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "input", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "label", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Ville");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "input", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "input", 22);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "label", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, " j'accepte les conditions d'utilisation ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4069,11 +4115,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "div", 24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "button", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "button", 25);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Creer un compte");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, "Creer un compte");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4089,12 +4135,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         if (rf & 2) {
           var _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](34);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", _r0.invalid);
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["RequiredValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["CheckboxControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["CheckboxRequiredValidator"]],
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["RequiredValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["CheckboxControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["CheckboxRequiredValidator"]],
       styles: [".inscription[_ngcontent-%COMP%] {\n  width: 400px;\n  height: 350px;\n  position: absolute;\n  top: 15%;\n  right: 5%;\n  background-color: rgba(255, 255, 255, 0.9);\n  border-radius: 12px;\n}\n\n.inscriptionDiv1[_ngcontent-%COMP%] {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  margin-right: 20px;\n  margin-left: 20px;\n  color: black;\n  font-family: \"ABeeZee\";\n}\n\n.inscriptionDivButton[_ngcontent-%COMP%] {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 100%;\n}\n\n.inscriptionButton[_ngcontent-%COMP%] {\n  width: 80%;\n  position: relative;\n  left: 10%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjdWVpbC9pbnNjcmlwdGlvbi1mb3JtL2M6XFxub2RlXFxuZXdleHByZXNzXFxmcm9udGVuZFxcbW9uLXByb2pldC1hbmd1bGFyL3NyY1xcYXBwXFxhY2N1ZWlsXFxpbnNjcmlwdGlvbi1mb3JtXFxpbnNjcmlwdGlvbi1mb3JtLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hY2N1ZWlsL2luc2NyaXB0aW9uLWZvcm0vaW5zY3JpcHRpb24tZm9ybS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVDLFlBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLDBDQUFBO0VBQ0EsbUJBQUE7QUNBRDs7QURFQTtFQUVFLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLHNCQUFBO0FDQUY7O0FERUE7RUFFQyxjQUFBO0VBQ0MsaUJBQUE7RUFDQSxrQkFBQTtFQUFvQixXQUFBO0FDQ3RCOztBREVBO0VBQ0MsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtBQ0NEIiwiZmlsZSI6InNyYy9hcHAvYWNjdWVpbC9pbnNjcmlwdGlvbi1mb3JtL2luc2NyaXB0aW9uLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW5zY3JpcHRpb25cclxue1xyXG5cdHdpZHRoOiA0MDBweDsgXHJcblx0aGVpZ2h0OjM1MHB4OyBcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0dG9wOiAxNSUgO1xyXG5cdHJpZ2h0OiA1JSA7XHJcblx0YmFja2dyb3VuZC1jb2xvciA6cmdiYSgyNTUsMjU1LDI1NSwwLjkpOyBcclxuXHRib3JkZXItcmFkaXVzOiAxMnB4OyBcclxufVxyXG4uaW5zY3JpcHRpb25EaXYxXHJcbntcclxuICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAyMHB4OyBcclxuICBjb2xvcjpibGFjazsgXHJcbiAgZm9udC1mYW1pbHk6ICdBQmVlWmVlJztcclxufVxyXG4uaW5zY3JpcHRpb25EaXZCdXR0b25cclxue1xyXG5cdGRpc3BsYXk6IGJsb2NrO1xyXG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gIG1hcmdpbi1yaWdodDogYXV0bzsgd2lkdGg6IDEwMCVcclxufVxyXG5cclxuLmluc2NyaXB0aW9uQnV0dG9ue1xyXG5cdHdpZHRoOiA4MCUgO1xyXG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuXHRsZWZ0OjEwJTtcclxufSIsIi5pbnNjcmlwdGlvbiB7XG4gIHdpZHRoOiA0MDBweDtcbiAgaGVpZ2h0OiAzNTBweDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDE1JTtcbiAgcmlnaHQ6IDUlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOSk7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG59XG5cbi5pbnNjcmlwdGlvbkRpdjEge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtZmFtaWx5OiBcIkFCZWVaZWVcIjtcbn1cblxuLmluc2NyaXB0aW9uRGl2QnV0dG9uIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICBtYXJnaW4tcmlnaHQ6IGF1dG87XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uaW5zY3JpcHRpb25CdXR0b24ge1xuICB3aWR0aDogODAlO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IDEwJTtcbn0iXX0= */"]
     });
     /*@__PURE__*/
@@ -4108,7 +4154,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           styleUrls: ['./inscription-form.component.scss']
         }]
       }], function () {
-        return [];
+        return [{
+          type: src_app_services_service_connexion__WEBPACK_IMPORTED_MODULE_1__["connexionService"]
+        }];
       }, null);
     })();
     /***/
@@ -4167,8 +4215,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit(form) {
-          console.log("ok essai ...");
-          alert('submit');
           var inscription = {
             nom: form.value['nom'],
             prenom: form.value['prenom'],
@@ -6352,9 +6398,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this["long"] = 0;
         this.id_compte = 0;
         this.profile = {
-          nom: "Ali",
-          prenom: "hadj-said",
-          adresse: "65 rue paul masson",
+          nom: "",
+          prenom: "",
+          adresse: "",
           code_postale: 29200
         };
         this.base_url = 'https://alihdj.alwaysdata.net';
@@ -6602,6 +6648,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.wait = true;
           this.httpclient.post(this.base_url + '/connexion/', connexionInfo).subscribe(function (stat) {
             _this15.connecte = true;
+            _this15.profile.nom = stat.nom;
+            _this15.profile.prenom = stat.prenom;
             _this15.id_compte = stat.id;
             _this15.att = stat.att;
             _this15["long"] = stat["long"];
