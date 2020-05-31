@@ -1581,7 +1581,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "messagerie",
         value: function messagerie() {
-          return this.connexion.messagerie;
+          if (this.messageRecu) return this.connexion.messagerie;else {
+            return this.connexion.messagerieR;
+          }
         }
       }, {
         key: "ngOnInit",
@@ -6473,7 +6475,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         );
         var subscription = source.subscribe(function (x) {
           _this3.httpclient.get(_this3.base_url + '/messagesR/' + _this3.id_compte).subscribe(function (p) {
-            if (!_this3.stop) _this3.messagerie = Promise.resolve(p);
+            if (!_this3.stop) _this3.messagerieR = Promise.resolve(p);
           });
         }, function (err) {
           console.log('Error: ' + err);
@@ -6558,7 +6560,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.areReady[2] = false;
           this.httpclient.get(this.base_url + '/messagesR/' + this.id_compte).subscribe(function (pub) {
             if (pub) {
-              _this8.messagerie = Promise.resolve(pub);
+              _this8.messagerieR = Promise.resolve(pub);
               _this8.areReady[2] = true;
             }
           }, function (err) {

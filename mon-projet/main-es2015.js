@@ -733,7 +733,11 @@ class MessagesComponent {
         this.messageRecu = !this.messageRecu;
     }
     messagerie() {
-        return this.connexion.messagerie;
+        if (this.messageRecu)
+            return this.connexion.messagerie;
+        else {
+            return this.connexion.messagerieR;
+        }
     }
     ngOnInit() {
         this.connexion.getMessagesR();
@@ -3110,7 +3114,7 @@ class connexionService {
         var subscription = source.subscribe((x) => {
             this.httpclient.get(this.base_url + '/messagesR/' + this.id_compte).subscribe((p) => {
                 if (!this.stop)
-                    this.messagerie = Promise.resolve(p);
+                    this.messagerieR = Promise.resolve(p);
             });
         }, function (err) {
             console.log('Error: ' + err);
@@ -3158,7 +3162,7 @@ class connexionService {
         this.areReady[2] = false;
         this.httpclient.get(this.base_url + '/messagesR/' + this.id_compte).subscribe((pub) => {
             if (pub) {
-                this.messagerie = Promise.resolve(pub);
+                this.messagerieR = Promise.resolve(pub);
                 this.areReady[2] = true;
             }
         }, (err) => console.log(err));
