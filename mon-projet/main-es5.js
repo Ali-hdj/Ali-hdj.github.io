@@ -1296,17 +1296,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "onRepondre",
         value: function onRepondre() {
           this.repondre = true;
+          this.connexion.stop = true;
         }
       }, {
         key: "onAnnuler",
         value: function onAnnuler() {
           this.repondre = false;
           this.active = true;
+          this.connexion.stop = false;
         }
       }, {
         key: "onSupprimer",
         value: function onSupprimer() {
           this.active = false;
+          this.connexion.stop = true;
         }
       }, {
         key: "onSubmit",
@@ -1319,6 +1322,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.connexion.addMessage(reponse);
           this.repondre = false;
           this.active = true;
+          this.connexion.stop = false;
         }
       }]);
 
@@ -6377,18 +6381,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! Rxjs/Rx */
+    "./node_modules/Rxjs/Rx.js");
+    /* harmony import */
+
+
+    var Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__);
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
     var connexionService = /*#__PURE__*/function () {
       function connexionService(route, httpclient) {
+        var _this3 = this;
+
         _classCallCheck(this, connexionService);
 
         this.route = route;
@@ -6397,6 +6413,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.att = 0;
         this["long"] = 0;
         this.id_compte = 0;
+        this.stop = false;
         this.profile = {
           nom: "",
           prenom: "",
@@ -6451,6 +6468,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }];
         this.connecte = false;
         this.wait = false;
+        var source = Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__["Observable"].interval(1500
+        /* ms */
+        );
+        var subscription = source.subscribe(function (x) {
+          _this3.httpclient.get(_this3.base_url + '/messagesR/' + _this3.id_compte).subscribe(function (p) {
+            if (!_this3.stop) _this3.messagerie = Promise.resolve(p);
+          });
+        }, function (err) {
+          console.log('Error: ' + err);
+        }, function () {
+          console.log('Completed');
+        });
       }
 
       _createClass(connexionService, [{
@@ -6461,11 +6490,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "success",
         value: function success() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.isSuccess = true;
           setTimeout(function () {
-            return _this3.isSuccess = false;
+            return _this4.isSuccess = false;
           }, 2500);
         }
         /************************************Actions********************** */
@@ -6473,17 +6502,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "supprimerAnnonce",
         value: function supprimerAnnonce(id) {
-          var _this4 = this;
+          var _this5 = this;
 
           this.isWaitingSomting = true;
           setTimeout(function () {
-            _this4.mesAnnonces = _this4.mesAnnonces.filter(function (x) {
+            _this5.mesAnnonces = _this5.mesAnnonces.filter(function (x) {
               return x.id_annonce != id;
             });
-            _this4.isWaitingSomting = false;
-            _this4.isSuccess = true;
+            _this5.isWaitingSomting = false;
+            _this5.isSuccess = true;
             setTimeout(function () {
-              return _this4.isSuccess = false;
+              return _this5.isSuccess = false;
             }, 1000);
           }, 200);
           this.httpclient["delete"](this.base_url + '/del/annonce/' + id).subscribe(function (pub) {
@@ -6499,35 +6528,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getProfile",
         value: function getProfile() {
-          var _this5 = this;
+          var _this6 = this;
 
           this.areReady[1] = false;
           setTimeout(function () {
-            return _this5.areReady[1] = true;
+            return _this6.areReady[1] = true;
           }, 300);
         }
       }, {
         key: "getMessages",
         value: function getMessages() {
-          var _this6 = this;
-
-          this.areReady[2] = false;
-          this.httpclient.get(this.base_url + '/messages/' + this.id_compte).subscribe(function (pub) {
-            if (pub) {
-              _this6.messagerie = Promise.resolve(pub);
-              _this6.areReady[2] = true;
-            }
-          }, function (err) {
-            return console.log(err);
-          });
-        }
-      }, {
-        key: "getMessagesR",
-        value: function getMessagesR() {
           var _this7 = this;
 
           this.areReady[2] = false;
-          this.httpclient.get(this.base_url + '/messagesR/' + this.id_compte).subscribe(function (pub) {
+          this.httpclient.get(this.base_url + '/messages/' + this.id_compte).subscribe(function (pub) {
             if (pub) {
               _this7.messagerie = Promise.resolve(pub);
               _this7.areReady[2] = true;
@@ -6537,15 +6551,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
         }
       }, {
+        key: "getMessagesR",
+        value: function getMessagesR() {
+          var _this8 = this;
+
+          this.areReady[2] = false;
+          this.httpclient.get(this.base_url + '/messagesR/' + this.id_compte).subscribe(function (pub) {
+            if (pub) {
+              _this8.messagerie = Promise.resolve(pub);
+              _this8.areReady[2] = true;
+            }
+          }, function (err) {
+            return console.log(err);
+          });
+        }
+      }, {
         key: "addMessage",
         value: function addMessage(message) {
-          var _this8 = this;
+          var _this9 = this;
 
           this.httpclient.post(this.base_url + '/add/message/', message).subscribe(function (pub) {
             if (pub) {
-              _this8.isSuccess = true;
+              _this9.isSuccess = true;
               setTimeout(function () {
-                _this8.isSuccess = false;
+                _this9.isSuccess = false;
               }, 1000);
             }
           }, function (err) {
@@ -6556,28 +6585,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getRendez_vous",
         value: function getRendez_vous() {
-          var _this9 = this;
+          var _this10 = this;
 
           this.areReady[3] = false;
           setTimeout(function () {
-            return _this9.areReady[3] = true;
+            return _this10.areReady[3] = true;
           }, 300);
         }
       }, {
         key: "getVoisins",
         value: function getVoisins(R) {
-          var _this10 = this;
+          var _this11 = this;
 
           this.areReady[5] = false;
           this.httpclient.get(this.base_url + '/voisins/' + R).subscribe(function (v) {
             if (v) {
-              _this10.voisins = Promise.resolve(v);
+              _this11.voisins = Promise.resolve(v);
 
-              _this10.voisins.then(function (val) {
-                _this10.mesVoisins = val;
+              _this11.voisins.then(function (val) {
+                _this11.mesVoisins = val;
               });
 
-              _this10.areReady[5] = true;
+              _this11.areReady[5] = true;
             }
           }, function (err) {
             return console.log(err);
@@ -6587,23 +6616,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getContrats",
         value: function getContrats() {
-          var _this11 = this;
+          var _this12 = this;
 
           this.areReady[6] = false;
           setTimeout(function () {
-            return _this11.areReady[6] = true;
+            return _this12.areReady[6] = true;
           }, 300);
         }
       }, {
         key: "getPublication",
         value: function getPublication() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.areReady[4] = false;
           this.httpclient.get(this.base_url + '/annonces/').subscribe(function (pub) {
             if (pub) {
-              _this12.annonces = pub;
-              _this12.areReady[4] = true;
+              _this13.annonces = pub;
+              _this13.areReady[4] = true;
             }
           }, function (err) {
             return console.log(err);
@@ -6613,13 +6642,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getMesPublication",
         value: function getMesPublication() {
-          var _this13 = this;
+          var _this14 = this;
 
           this.areReady[4] = false;
           this.httpclient.get(this.base_url + '/annonces/' + this.id_compte).subscribe(function (pub) {
             if (pub) {
-              _this13.mesAnnonces = pub;
-              _this13.areReady[4] = true;
+              _this14.mesAnnonces = pub;
+              _this14.areReady[4] = true;
             }
           }, function (err) {
             return console.log(err);
@@ -6629,13 +6658,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addPublication",
         value: function addPublication(newPub) {
-          var _this14 = this;
+          var _this15 = this;
 
           newPub.tocken = this.tocken;
           this.httpclient.post(this.base_url + '/add/annonce/', newPub).subscribe(function (stat) {
             console.log(stat);
 
-            _this14.success();
+            _this15.success();
           }, function (err) {
             alert(err);
           });
@@ -6643,24 +6672,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "seConnecter",
         value: function seConnecter(connexionInfo) {
-          var _this15 = this;
+          var _this16 = this;
 
           this.wait = true;
           this.httpclient.post(this.base_url + '/connexion/', connexionInfo).subscribe(function (stat) {
-            _this15.connecte = true;
-            _this15.profile.nom = stat.nom;
-            _this15.profile.prenom = stat.prenom;
-            _this15.id_compte = stat.id;
-            _this15.att = stat.att;
-            _this15["long"] = stat["long"];
-            _this15.tocken = stat.tocken;
+            _this16.connecte = true;
+            _this16.profile.nom = stat.nom;
+            _this16.profile.prenom = stat.prenom;
+            _this16.id_compte = stat.id;
+            _this16.att = stat.att;
+            _this16["long"] = stat["long"];
+            _this16.tocken = stat.tocken;
 
-            _this15.route.navigate(['accueil-utilisateur']);
+            _this16.route.navigate(['accueil-utilisateur']);
 
-            _this15.wait = false;
+            _this16.wait = false;
           }, function (err) {
             alert('echec d\'autenfication');
-            _this15.wait = false;
+            _this16.wait = false;
           });
         }
       }, {
@@ -6698,7 +6727,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     connexionService.ɵfac = function connexionService_Factory(t) {
-      return new (t || connexionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
+      return new (t || connexionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]));
     };
 
     connexionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -6712,9 +6741,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
         }, {
-          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
         }];
       }, null);
     })();
@@ -6766,7 +6795,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var utilisateurService = /*#__PURE__*/function () {
       function utilisateurService(httpclient) {
-        var _this16 = this;
+        var _this17 = this;
 
         _classCallCheck(this, utilisateurService);
 
@@ -6774,7 +6803,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.base_url = 'https://alihdj.alwaysdata.net';
         this.stop = false;
         this.posts = new Promise(function (resolve, reject) {
-          _this16.httpclient.get(_this16.base_url + /annonces/).subscribe(function (p) {
+          _this17.httpclient.get(_this17.base_url + /annonces/).subscribe(function (p) {
             resolve(p);
           });
         });
@@ -6782,11 +6811,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         /* ms */
         );
         var subscription = source.subscribe(function (x) {
-          _this16.httpclient.get(_this16.base_url + /annonces/).subscribe(function (p) {
-            if (!_this16.stop) _this16.posts = Promise.resolve(p);
+          _this17.httpclient.get(_this17.base_url + /annonces/).subscribe(function (p) {
+            if (!_this17.stop) _this17.posts = Promise.resolve(p);
           });
-
-          console.log(_this16.posts);
         }, function (err) {
           console.log('Error: ' + err);
         }, function () {

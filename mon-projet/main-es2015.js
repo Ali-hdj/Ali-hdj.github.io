@@ -594,13 +594,16 @@ class MessageComponent {
     }
     onRepondre() {
         this.repondre = true;
+        this.connexion.stop = true;
     }
     onAnnuler() {
         this.repondre = false;
         this.active = true;
+        this.connexion.stop = false;
     }
     onSupprimer() {
         this.active = false;
+        this.connexion.stop = true;
     }
     onSubmit(f) {
         var reponse = {
@@ -611,6 +614,7 @@ class MessageComponent {
         this.connexion.addMessage(reponse);
         this.repondre = false;
         this.active = true;
+        this.connexion.stop = false;
     }
 }
 MessageComponent.ɵfac = function MessageComponent_Factory(t) { return new (t || MessageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_service_connexion__WEBPACK_IMPORTED_MODULE_1__["connexionService"])); };
@@ -3024,8 +3028,11 @@ NavigationToutPubComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "connexionService", function() { return connexionService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Rxjs/Rx */ "./node_modules/Rxjs/Rx.js");
+/* harmony import */ var Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
 
 
 
@@ -3038,6 +3045,7 @@ class connexionService {
         this.att = 0;
         this.long = 0;
         this.id_compte = 0;
+        this.stop = false;
         this.profile = {
             nom: "",
             prenom: "",
@@ -3098,6 +3106,17 @@ class connexionService {
         ];
         this.connecte = false;
         this.wait = false;
+        var source = Rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__["Observable"].interval(1500 /* ms */);
+        var subscription = source.subscribe((x) => {
+            this.httpclient.get(this.base_url + '/messagesR/' + this.id_compte).subscribe((p) => {
+                if (!this.stop)
+                    this.messagerie = Promise.resolve(p);
+            });
+        }, function (err) {
+            console.log('Error: ' + err);
+        }, function () {
+            console.log('Completed');
+        });
     }
     isReady(id) {
         return this.areReady[id];
@@ -3217,11 +3236,11 @@ class connexionService {
         return;
     }
 }
-connexionService.ɵfac = function connexionService_Factory(t) { return new (t || connexionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
+connexionService.ɵfac = function connexionService_Factory(t) { return new (t || connexionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
 connexionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: connexionService, factory: connexionService.ɵfac });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](connexionService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
@@ -3261,7 +3280,6 @@ class utilisateurService {
                 if (!this.stop)
                     this.posts = Promise.resolve(p);
             });
-            console.log(this.posts);
         }, function (err) {
             console.log('Error: ' + err);
         }, function () {
