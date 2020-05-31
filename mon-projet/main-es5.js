@@ -2686,7 +2686,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-publications"]],
       decls: 13,
       vars: 6,
-      consts: [[1, "publicationDiv"], [2, "margin-bottom", "20px", "width", "98%", "background-color", "white", "padding", "20px", "padding-right", "20px", "border-radius", "12px"], [2, "margin-bottom", "10px"], [3, "ngSubmit"], ["f", "ngForm"], ["name", "post", "ngModel", "", "required", "", "minlength", "20", "id", "exampleFormControlTextarea1", "rows", "5", 1, "form-control", 2, "margin", "10px"], ["l", "", 4, "ngIf"], ["type", "submit", 1, "btn", "btn-success", 2, "position", "relative", "left", "85%", 3, "disabled"], ["style", "color: red;", 4, "ngIf"], [3, "post", 4, "ngFor", "ngForOf"], ["l", ""], ["name", "categorie", "ngModel", "", 1, "form-control", 2, "margin", "10px"], ["value", "0"], ["value", "1"], ["value", "2"], ["value", "3"], ["value", "4"], ["value", "5"], [4, "ngIf"], ["type", "number", "id", "prix", "name", "prix", "ngModel", "", "required", "", 1, "form-control", 2, "width", "50%", "margin", "10px"], [2, "color", "red"], [3, "post"]],
+      consts: [[1, "publicationDiv"], [2, "margin-bottom", "20px", "width", "98%", "background-color", "white", "padding", "20px", "padding-right", "20px", "border-radius", "12px"], [2, "margin-bottom", "10px"], [3, "ngSubmit"], ["f", "ngForm"], ["name", "post", "ngModel", "", "required", "", "minlength", "20", "id", "exampleFormControlTextarea1", "rows", "5", 1, "form-control", 2, "margin", "10px"], ["l", "", 4, "ngIf"], ["type", "submit", 1, "btn", "btn-success", 2, "position", "relative", "left", "85%", 3, "disabled"], ["style", "color: red;", 4, "ngIf"], [3, "post", 4, "ngFor", "ngForOf"], ["l", ""], ["name", "categorie", "ngModel", "", "required", "", 1, "form-control", 2, "margin", "10px"], ["value", "0"], ["value", "1"], ["value", "2"], ["value", "3"], ["value", "4"], ["value", "5"], [4, "ngIf"], ["type", "number", "min", "0", "max", "5000", "id", "prix", "name", "prix", "ngModel", "", "required", "", 1, "form-control", 2, "width", "50%", "margin", "10px"], [2, "color", "red"], [3, "post"]],
       template: function PublicationsComponent_Template(rf, ctx) {
         if (rf & 1) {
           var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -2743,7 +2743,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", _r0.invalid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", _r0.invalid || _r0.value["categorie"] === "0" || _r0.value["prix"] < 0 || _r0.value["prix"] > 5000);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
